@@ -1,4 +1,4 @@
-functiontampilkanfunctionHalaman(id) {
+function tampilkanfunctionHalaman(id) {
 document.querySelectorAll(".layar").forEach(function(halaman) {
 halaman.classList.remove("aktif");
 });
