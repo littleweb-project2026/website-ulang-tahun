@@ -29,14 +29,13 @@ if (angka === "16") {
 }
 
 function bukaFoto() {
-const music = document.getElementById("music");
+    const music = document.getElementById("music");
 
-music.play().catch(function() {
-    console.log("Musik gagal diputar");
-});
+    music.play().catch(function(error) {
+        console.log("Musik gagal diputar:", error);
+    });
 
-tampilkanHalaman("halamanFoto");
-
+    tampilkanHalaman("halamanFoto");
 }
 
 function bukaBirthday() {
