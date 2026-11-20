@@ -1,35 +1,46 @@
+functiontampilkanfunctionHalaman(id) {
+document.querySelectorAll(".layar").forEach(function(halaman) {
+halaman.classList.remove("aktif");
+});
 
-function tampilkanHalaman(id) {
-    document.querySelectorAll(".layar").forEach(function(halaman) {
-        halaman.classList.remove("aktif");
-    });
+document.getElementById(id).classList.add("aktif");
 
-    document.getElementById(id).classList.add("aktif");
+window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+});
 
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-    });
 }
 
 function cekPassword() {
-    const angka = document.getElementById("password").value;
+const angka = document.getElementById("password").value;
+const tombolFoto = document.getElementById("tombolBukaFoto");
 
-    if (angka === "16") {
-        const music = document.getElementById("music");
+if (angka === "16") {
+    tombolFoto.style.display = "block";
+    document.getElementById("pesan").textContent =
+        "Password benar! Kejutan sudah menunggu 💗";
+} else {
+    tombolFoto.style.display = "none";
+    document.getElementById("pesan").textContent =
+        "Belum tepat, coba lagi ya! 💕";
+}
 
-        // Mulai musik setelah tombol OKE ditekan
-        music.play().then(function() {
-            console.log("Musik berhasil diputar");
-        }).catch(function() {
-            console.log("Musik belum bisa diputar otomatis");
-        });
+}
 
-        tampilkanHalaman("halamanHBD");
-    } else {
-        document.getElementById("pesan").textContent =
-            "Belum tepat, coba lagi ya! 💕";
-    }
+function bukaFoto() {
+const music = document.getElementById("music");
+
+music.play().catch(function() {
+    console.log("Musik gagal diputar");
+});
+
+tampilkanHalaman("halamanFoto");
+
+}
+
+function bukaBirthday() {
+tampilkanHalaman("halamanHBD");
 }
 
 function bukaKado() {
