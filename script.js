@@ -61,8 +61,10 @@ function bukaSurprise() {
 function putarMusik() {
     const music = document.getElementById("music");
 
-    music.play().catch(function() {
-        alert("Tekan tombol putar sekali lagi ya.");
+    music.load();
+
+    music.play().catch(function(error) {
+        alert("Musik gagal diputar: " + error.message);
     });
 }
 
