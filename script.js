@@ -61,11 +61,11 @@ function bukaSurprise() {
 function putarMusik() {
     const music = document.getElementById("music");
 
-    music.load();
-
-    music.play().catch(function(error) {
-        alert("Musik gagal diputar: " + error.message);
-    });
+    if (music.paused) {
+        music.play().catch(function(error) {
+            alert("Musik gagal diputar: " + error.message);
+        });
+    }
 }
 
 function jedaMusik() {
