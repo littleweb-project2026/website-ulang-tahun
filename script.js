@@ -60,7 +60,7 @@ function putarMusik() {
     const music = document.getElementById("music");
 
     music.play().catch(function() {
-        alert("Tekan tombol putar sekali lagi ya.");
+        //alert("Tekan tombol putar sekali lagi ya.");
     });
 }
 
