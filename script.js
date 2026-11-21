@@ -1,45 +1,43 @@
 function tampilkanHalaman(id) {
-document.querySelectorAll(".layar").forEach(function(halaman) {
-halaman.classList.remove("aktif");
-});
+    document.querySelectorAll(".layar").forEach(function(halaman) {
+        halaman.classList.remove("aktif");
+    });
 
-document.getElementById(id).classList.add("aktif");
+    document.getElementById(id).classList.add("aktif");
 
-window.scrollTo({
-    top: 0,
-    behavior: "smooth"
-});
-
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
 }
 
 function cekPassword() {
-const angka = document.getElementById("password").value;
-const tombolFoto = document.getElementById("tombolBukaFoto");
+    const angka = document.getElementById("password").value;
+    const tombolFoto = document.getElementById("tombolBukaFoto");
 
-if (angka === "16") {
-    tombolFoto.style.display = "block";
-    document.getElementById("pesan").textContent =
-        "Password benar! Kejutan sudah menunggu 💗";
-} else {
-    tombolFoto.style.display = "none";
-    document.getElementById("pesan").textContent =
-        "Belum tepat, coba lagi ya! 💕";
-}
-
+    if (angka === "16") {
+        tombolFoto.style.display = "block";
+        document.getElementById("pesan").textContent =
+            "Password benar! Kejutan sudah menunggu 💗";
+    } else {
+        tombolFoto.style.display = "none";
+        document.getElementById("pesan").textContent =
+            "Belum tepat, coba lagi ya! 💕";
+    }
 }
 
 function bukaFoto() {
     const music = document.getElementById("music");
 
-    music.play().catch(function(error) {
-        console.log("Musik gagal diputar:", error);
+    music.play().catch(function() {
+        console.log("Musik gagal diputar");
     });
 
     tampilkanHalaman("halamanFoto");
 }
 
 function bukaBirthday() {
-tampilkanHalaman("halamanHBD");
+    tampilkanHalaman("halamanHBD");
 }
 
 function bukaKado() {
@@ -61,11 +59,9 @@ function bukaSurprise() {
 function putarMusik() {
     const music = document.getElementById("music");
 
-    if (music.paused) {
-        music.play().catch(function(error) {
-            alert("Musik gagal diputar: " + error.message);
-        });
-    }
+    music.play().catch(function() {
+        alert("Tekan tombol putar sekali lagi ya.");
+    });
 }
 
 function jedaMusik() {
